@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema({
+
     taskName:{
         type: String,
         required: true
@@ -25,4 +26,4 @@ const taskSchema = new mongoose.Schema({
 
 const taskEntries = mongoose.model("taskEntries", taskSchema);
 
-module.export = taskEntries;
+module.exports = taskEntries;
