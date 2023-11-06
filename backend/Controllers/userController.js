@@ -24,5 +24,41 @@ const register = async(req, res) =>{
     res 
         .status(500)
         .send({msg:"Internal server error, please try again later"})
-}
+    }
 };
+
+const login = async(req, res) =>{
+    try{
+        let {email, password} = req.body;
+        if (!email, !password){
+            return res
+                .status(402)
+                .send({msg:"Both email and password and required"});
+        }
+        let existingUser = await User.findOne({email});
+        if (existingUser){
+            let validPassword = await bcrypt.compare(password, existingUser.password);
+            if (!validPassword){
+                return res
+                    .status(401)
+                    .send({msg:"Invalid password"})
+            } else {
+                let token = jwt.sign({email:existingUser.email, id:existingUser._id, userName:existingUser.userName}, process.env.PRIVATE_KEY, {expiresIn: "3h"});
+                res 
+                    .status(200)
+                    .send({msg:"Successful login", token});
+            }
+        } else {
+            return res
+                .status(404)
+                .send({msg:"Invalid email"});
+        }
+    } catch (err){
+        console.log(err);
+            res 
+                .status(500)
+                .send({msg: "Internal server error, login failed"});
+    }
+};
+
+module.exports = { register, login};
