@@ -1,8 +1,8 @@
-<h1> NoFuzz :calendar: :dart: </h1>
+<h1> NoFuss :calendar: :dart: </h1>
 
-Tired of misunderstandings, missed deadlines, and unnecessary arguments with your roommates, partner, or family members? Say goodbye to the chaos and welcome tranquility into your shared living spaces with NoFuzz – the ultimate project management tool designed for you.
+Tired of misunderstandings, missed deadlines, and unnecessary arguments with your roommates, partner, or family members? Say goodbye to the chaos and welcome tranquility into your shared living spaces with NoFuss – the ultimate project management tool designed for you.
 
-NoFuzz is here to simplify your life by streamlining everyday tasks, from household chores to vacation plans. With NoFuzz, you can effortlessly create and assign tasks, set deadlines, and track progress, all in one convenient place. No more confusion, no more arguments – just smooth collaboration and shared responsibilities.
+NoFuss is here to simplify your life by streamlining everyday tasks, from household chores to vacation plans. With NoFuss, you can effortlessly create and assign tasks, set deadlines, and track progress, all in one convenient place. No more confusion, no more arguments – just smooth collaboration and shared responsibilities.
 
 <h2>Key Features :key:</h2>
 
@@ -24,7 +24,7 @@ NoFuzz is here to simplify your life by streamlining everyday tasks, from househ
 
 <h2>Built With :wrench:</h2>
 
-NoFuzz leverages a robust technology stack, including Mongoose, Express, MongoDB, Node.js, JavaScript, React, and CSS. This powerful combination guarantees smooth functionality and an intuitive user interface. Experience the difference – start using NoFuzz today and start living in harmony!
+NoFuzz leverages a robust technology stack, including Mongoose, Express, MongoDB, Node.js, JavaScript, React, and CSS. This powerful combination guarantees smooth functionality and an intuitive user interface. Experience the difference – start using NoFuss today and start living in harmony!
 
 <h2>About the Author :woman:</h2>
 
