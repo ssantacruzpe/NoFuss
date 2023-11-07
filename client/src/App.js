@@ -1,11 +1,16 @@
 import './App.css';
-import SignUpPage from "./Components/SignUpPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignUpPage from './Components/SignUpPage';
+import LoginPage from './Components/LoginPage';
 
 function App() {
   return (
-    <div className="App">
-      <SignUpPage/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage login={LoginPage} />} />
+        <Route path="/register" element={<SignUpPage register={SignUpPage} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
