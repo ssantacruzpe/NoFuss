@@ -15,8 +15,8 @@ function SignUpPage(){
         let res = await axios.post("http://localhost:3000/landing/register", {userName, email, password});
         alert (res.data.msg);
         navigate("/login");
-
     }
+    
     return(
         <div className="sign-up">
             <div className="left-side-sign-up">

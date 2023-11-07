@@ -6,7 +6,7 @@ import "./LoginPage.css";
 function LoginPage(){
 
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useNavigate("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     async function handleLogin(e){
