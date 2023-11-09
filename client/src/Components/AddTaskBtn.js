@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./AddTaskBtn.css"; 
-import AddTaskForm from "./Components/AddTaskForm";
 
 function AddTaskBtn(){
+  const [count, setCount] = useState(0);
 
-    return(
-        <div>
-            <h1>Welcome</h1>
-            <AddTaskForm/>
-        </div>
-    )
-}
-
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+};
 
 export default AddTaskBtn;
