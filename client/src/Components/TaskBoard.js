@@ -12,7 +12,7 @@ function TaskBoard({}){
             .get("http://localhost:3000/hh/tasks")
             .then((res) =>{
                 setTasks(res.data);
-                console.log(tasks);
+               console.log(tasks);
             })
             .catch((err) => console.log(err));
     } catch(error){
@@ -27,6 +27,7 @@ function TaskBoard({}){
     <div>
         <h1>Welcome</h1>
         <button onClick={getAllTasks}>Get all of theeeem</button>
+        <TaskBox tasks={tasks}/>
     </div>
   );
 };
