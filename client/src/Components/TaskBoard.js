@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "./TaskBoard.css"; 
 import TaskBox from "./TaskBox";
 
 
-function TaskBoard(){
-  
-  const [tasks, showTasks] = useState([]);
+function TaskBoard({}){
+  const [tasks, setTasks] = useState([]);
   const getAllTasks = () => {
-      try {
-          axios
-              .get("http://localhost:3000/hh/tasks")
-              .then((res)=>{
-                  showTasks(res.data);
-              })
-              .catch((err) => console.log(err));
-      } catch(error){
-          console.log(error);
-      }
-  };
+    try {
+        axios
+            .get("http://localhost:3000/hh/tasks")
+            .then((res) =>{
+                setTasks(res.data);
+                console.log(tasks);
+            })
+            .catch((err) => console.log(err));
+    } catch(error){
+        console.log(error);
+    }
+};
+  useEffect(() => {
+    getAllTasks();
+}, []);
 
   return (
     <div>
         <h1>Welcome</h1>
-        <button>Get all tasks</button>
-        <TaskBox tasks={tasks}/>
+        <button onClick={getAllTasks}>Get all of theeeem</button>
     </div>
   );
 };
