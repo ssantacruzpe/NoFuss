@@ -1,6 +1,7 @@
 import "./TaskBox.css"; 
 
 function TaskBox({ tasks }) {
+
     return (
         <div>
             {tasks.length > 0 ? (
@@ -16,6 +17,7 @@ function TaskBox({ tasks }) {
             )}
         </div>
     );
-}
+};
+
   
   export default TaskBox;

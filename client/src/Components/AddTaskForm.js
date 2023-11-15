@@ -15,7 +15,7 @@ function AddTaskForm(){
         let res = await axios
             .post("http://localhost:3000/hh/create", {taskName, taskDeadline, taskStatus, taskOwner});
             alert (res.data.msg);
-            navigate("/hh");
+            navigate("/hh");    
         }
 
     return(
