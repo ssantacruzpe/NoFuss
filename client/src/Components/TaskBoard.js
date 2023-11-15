@@ -2,14 +2,30 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./TaskBoard.css"; 
+import TaskBox from "./TaskBox";
+
 
 function TaskBoard(){
-  const [count, setCount] = useState(0);
+  
+  const [tasks, showTasks] = useState([]);
+  const getAllTasks = () => {
+      try {
+          axios
+              .get("http://localhost:3000/hh/tasks")
+              .then((res)=>{
+                  showTasks(res.data);
+              })
+              .catch((err) => console.log(err));
+      } catch(error){
+          console.log(error);
+      }
+  };
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+        <h1>Welcome</h1>
+        <button>Get all tasks</button>
+        <TaskBox tasks={tasks}/>
     </div>
   );
 };

@@ -8,10 +8,12 @@ import TaskBoard from "./TaskBoard";
 
 function HHprojectPage(){
 
+    
+
     return(
         <div>
             <h1>Welcome</h1>
-            <button>Add Task</button>
+            <button>Get all tasks</button>
             <AddTaskBtn/>
             <TaskBoard/>
         </div>

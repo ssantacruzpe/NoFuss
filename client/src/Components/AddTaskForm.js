@@ -12,10 +12,11 @@ function AddTaskForm(){
 
     async function createTaskForm(e){
         e.preventDefault();
-        let res = await axios.post("http://localhost:3000/hh/create", {taskName, taskDeadline, taskStatus, taskOwner});
-        alert (res.data.msg);
-        navigate("/hh");
-    }
+        let res = await axios
+            .post("http://localhost:3000/hh/create", {taskName, taskDeadline, taskStatus, taskOwner});
+            alert (res.data.msg);
+            navigate("/hh");
+        }
 
     return(
         <div>
@@ -27,15 +28,16 @@ function AddTaskForm(){
                     type="text" 
                     value={taskName} 
                     onChange={(e) => setTaskName(e.target.value)} 
-                    placeholder="Task Name"
+                    placeholder="What is the task?"
                 />
                 <input 
                     type="date" 
                     value={taskDeadline} 
-                    onChange={(e) => setTaskDeadline(e.target.value)} 
-                    placeholder="Email"
+                    onChange={(e) => setTaskDeadline(e.target.value)}
+                    placeholder="When is this task due?" 
                 />
                 <select value={taskStatus} onChange={(e) => setTaskStatus(e.target.value)}>
+                    <option hidden value="prompt">What is the status of the task?</option>
                     <option value="To Do">To Do</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Done">Done</option>
@@ -44,7 +46,7 @@ function AddTaskForm(){
                     type="text" 
                     value={taskOwner} 
                     onChange={(e) => setTaskOwner(e.target.value)} 
-                    placeholder="Owner"
+                    placeholder="Who is responsible for this task?"
                 />
                 <button type="submit">Cancel</button>
                 <button type="submit">Add Task</button>
