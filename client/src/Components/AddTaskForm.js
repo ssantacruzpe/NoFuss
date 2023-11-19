@@ -48,8 +48,12 @@ function AddTaskForm(){
                     onChange={(e) => setTaskOwner(e.target.value)} 
                     placeholder="Who is responsible for this task?"
                 />
-                <button type="submit">Cancel</button>
-                <button type="submit">Add Task</button>
+                <button type="submit">
+                    Cancel
+                </button>
+                <button type="submit">
+                    Add Task
+                </button>
             </form>
         </div>
     )
