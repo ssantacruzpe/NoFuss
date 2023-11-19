@@ -7,35 +7,35 @@
     background-color: #f0f4f8;
   }
 
-  .nofuss-title {
+.nofuss-title {
     color: #7C75D1;
     font-size: xxx-large;
     margin: 50px;
   }
   
-  .login-title{
+.login-title{
     color: #6CCAC8;
     font-size: xx-large;
   }
 
-  .form-container {
+.form-container {
     margin: 50px;
   }
   
   
-  form {
+form {
     display: flex;
     flex-direction: column;
   }
   
-  input {
+input {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
   
-  button {
+button {
     padding: 10px;
     background-color: #4b3ca8;
     color: white;
@@ -44,27 +44,27 @@
     cursor: pointer;
   }
   
-  button:hover {
+button:hover {
     background-color: #413c69;
   }
   
-  a {
+a {
     color: #4b3ca8;
     text-decoration: none;
   }
   
-  a:hover {
+a:hover {
     text-decoration: underline;
   }
   
-  .image-container {
+.image-container {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color:#6CCAC8;
   }
   
-  .image-container img {
+.image-container img {
     height: 100vh;
     object-fit: cover;
   }

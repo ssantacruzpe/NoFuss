@@ -5,18 +5,27 @@ import AddTaskForm from "./AddTaskForm";
 function AddTaskBtn(){
   const [showForm, setShowForm] = useState(false);
 
-  const toggleForm = () => {
-    setShowForm(!showForm);
-  }
+  const openForm = () => setShowForm(true);
+  const closeForm = () => setShowForm(false);
 
   return (
     <div>
-      <button onClick={toggleForm} className="add-task-btn">
-        {showForm ? "Close Task Form" : "Add New Task"}
+      <button onClick={openForm} className="add-task-btn">
+        Add New Task
       </button>
-      {showForm && <AddTaskForm />}
+
+      {showForm && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeForm}>&times;</span>
+            <AddTaskForm />
+          </div>
+          <div className="modal-overlay" onClick={closeForm}></div>
+        </div>
+      )}
     </div>
   );
 }
+
 
 export default AddTaskBtn;
