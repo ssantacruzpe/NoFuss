@@ -1,17 +1,22 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "./AddTaskBtn.css"; 
+import AddTaskForm from "./AddTaskForm";
 
 function AddTaskBtn(){
-  const [count, setCount] = useState(0);
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  }
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <button onClick={toggleForm} className="add-task-btn">
+        {showForm ? "Close Task Form" : "Add New Task"}
+      </button>
+      {showForm && <AddTaskForm />}
     </div>
   );
-};
+}
 
 export default AddTaskBtn;

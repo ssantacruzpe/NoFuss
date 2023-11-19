@@ -2,14 +2,12 @@ import "./TaskBoard.css";
 import TaskBox from "./TaskBox";
 
 
-function TaskBoard({tasks}){
-
- 
+function TaskBoard({tasks, getAllTasks}){
 
   return (
     <div>
         <h1>Welcome</h1>
-        <TaskBox tasks={tasks}/>
+        <TaskBox tasks={tasks} getAllTasks ={getAllTasks}/>
     </div>
   );
 };

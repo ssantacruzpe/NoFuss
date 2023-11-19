@@ -3,18 +3,18 @@ import axios from "axios";
 import "./HHprojectPage.css"; 
 import AddTaskBtn from "./AddTaskBtn";
 import TaskBoard from "./TaskBoard";
+import TaskBox from "./TaskBox";
 
 
 function HHprojectPage(){
 
     const [tasks, setTasks] = useState([]);
-  
     const getAllTasks = () => {
       try {
           axios
               .get("http://localhost:3000/hh/tasks")
               .then((res) => {
-                  setTasks(res.data);
+                setTasks(res.data);
                  console.log(tasks);
               })
               .catch((err) => console.log(err));
@@ -28,9 +28,10 @@ function HHprojectPage(){
 
     return(
         <div>
-            <h1>Welcome</h1>
+            <button onClick={getAllTasks}>get them all</button>
             <AddTaskBtn/>
             <TaskBoard getAllTasks={getAllTasks}/>
+            <TaskBox tasks={tasks}/>
         </div>
     )
 }
