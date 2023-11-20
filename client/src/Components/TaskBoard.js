@@ -135,14 +135,14 @@ function TaskBoard() {
                 </div>
             )}
 
-            {showDeletePopup && (
-                <div className="popup">
-                    <div className="popup-content">
-                        <h3>Are you sure you want to delete this task?</h3>
-                        <button onClick={deleteTask}>Confirm</button>
-                        <button onClick={() => setShowDeletePopup(false)}>Cancel</button>
-                    </div>
-                </div>
+        {showDeletePopup && (
+              <div className="popup">
+                  <div className="popup-content">
+                      <h3>Are you sure you want to delete this task?</h3>
+                      <button onClick={deleteTask}>Confirm</button>
+                      <button onClick={() => setShowDeletePopup(false)}>Cancel</button>
+                  </div>
+              </div>
             )}
         </div>
     );

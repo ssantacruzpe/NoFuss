@@ -1,19 +1,57 @@
-import "./HHprojectPage.css"; 
+// HHprojectPage.jsx
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import AddTaskBtn from "./AddTaskBtn";
 import TaskBoard from "./TaskBoard";
+import FilterOwner from "./FilterOwner";
+import SearchFilter from "./SearchFilter";
 
 function HHprojectPage() {
+    const [tasks, setTasks] = useState([]);
+    const [selectedOwner, setSelectedOwner] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
 
-    
-  return (
-    <div>
-      <AddTaskBtn/>
-      <TaskBoard/>
-    </div>
-        
-);
+    useEffect(() => {
+        fetchTasks();
+    }, []);
+
+    const fetchTasks = async () => {
+        try {
+            const response = await axios.get("http://localhost:3000/hh/tasks");
+            setTasks(response.data.tasks);
+        } catch (error) {
+            console.error("Error fetching tasks:", error);
+        }
+    };
+
+    const getUniqueOwners = () => {
+        const owners = tasks.map(task => task.taskOwner);
+        return [...new Set(owners)];
+    };
+
+    const handleOwnerSelect = (owner) => {
+        setSelectedOwner(owner);
+    };
+
+    const handleSearch = (query) => {
+        setSearchQuery(query.toLowerCase());
+    };
+
+    const filteredTasks = tasks.filter(task => {
+        const matchesOwner = selectedOwner === "" || task.taskOwner === selectedOwner;
+        const matchesSearch = searchQuery === "" || task.taskName.toLowerCase().includes(searchQuery);
+        return matchesOwner && matchesSearch;
+    });
+
+    return (
+        <div>
+            <AddTaskBtn />
+            <FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} />
+            <SearchFilter onSearch={handleSearch} />
+            <TaskBoard tasks={filteredTasks} />
+        </div>
+    );
 }
 
-
-
 export default HHprojectPage;
+

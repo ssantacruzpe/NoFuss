@@ -3,20 +3,25 @@ import "./AddTaskForm.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function AddTaskForm(){
+function AddTaskForm({ onClose }){
     const [taskName, setTaskName] = useState("");
     const [taskDeadline, setTaskDeadline] = useState("");
     const [taskStatus, setTaskStatus] = useState("");
     const [taskOwner, setTaskOwner] = useState("");
+
     const navigate = useNavigate();
 
     async function createTaskForm(e){
         e.preventDefault();
-        let res = await axios
-            .post("http://localhost:3000/hh/create", {taskName, taskDeadline, taskStatus, taskOwner});
-            alert (res.data.msg);
-            navigate("/hh");    
+        try {
+            let res = await axios.post("http://localhost:3000/hh/create", { taskName, taskDeadline, taskStatus, taskOwner });
+            alert(res.data.msg);
+            onClose();
+            navigate("/hh");
+        } catch (error) {
+            console.error("Error adding task", error);
         }
+    }
 
     return(
         <div>
@@ -48,12 +53,8 @@ function AddTaskForm(){
                     onChange={(e) => setTaskOwner(e.target.value)} 
                     placeholder="Who is responsible for this task?"
                 />
-                <button type="submit">
-                    Cancel
-                </button>
-                <button type="submit">
-                    Add Task
-                </button>
+                <button type="button" onClick={onClose}>Cancel</button>
+                <button type="submit" onClick={createTaskForm}>Add Task</button>
             </form>
         </div>
     )
