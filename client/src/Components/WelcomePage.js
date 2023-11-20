@@ -1,5 +1,6 @@
 import "./WelcomePage.css"; 
 import PendingTasksBox from "./PendingTasksBox"
+import NavBar from "./NavBar";
 
 
 
@@ -7,8 +8,7 @@ function WelcomePage(){
 
     return(
         <div>
-            <h1>NoFuss</h1>
-            <h2>test</h2>
+            <NavBar/>
             <PendingTasksBox/>
         </div>
     )

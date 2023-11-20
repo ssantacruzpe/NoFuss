@@ -32,7 +32,7 @@ function SignUpPage(){
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
                 <button type="submit">Sign Up</button>
-                <span>or, <a href="#signup">Log In</a></span>   
+                <span>or, <a href="http://localhost:3001/login">Log In</a></span>   
             </form>
             </div>
         </div>

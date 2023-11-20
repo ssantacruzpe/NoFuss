@@ -1,7 +1,7 @@
 .task-board {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin-left: 270px;
     padding: 20px;
 }
 

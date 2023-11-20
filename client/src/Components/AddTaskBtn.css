@@ -46,3 +46,6 @@
     cursor: pointer;
   }
   
+.add-task-btn{
+  position: fixed;
+}
