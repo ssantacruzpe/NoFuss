@@ -1,4 +1,5 @@
 import React from 'react';
+import "./FilterOwner.css";
 
 function FilterOwner({ owners, onOwnerSelect }) {
     return (

@@ -47,5 +47,6 @@
   }
   
 .add-task-btn{
-  position: fixed;
+  position: relative;
+  left: 50%;
 }

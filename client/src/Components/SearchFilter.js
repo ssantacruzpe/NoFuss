@@ -1,4 +1,5 @@
 import React from 'react';
+import "./SearchFilter.css";
 
 function SearchFilter({ onSearch }) {
     return (
