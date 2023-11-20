@@ -1,0 +1,24 @@
+.in-progress-tasks-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tasks-box {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.column {
+    margin-right: 20px;
+}
+
+.column h3 {
+    margin-bottom: 10px;
+}
+
+.column p {
+    margin-bottom: 5px;
+}

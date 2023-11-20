@@ -18,7 +18,7 @@ function AddTaskBtn(){
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeForm}>&times;</span>
-            <AddTaskForm onClose={closeForm} /> {/* Pass closeForm as a prop */}
+            <AddTaskForm onClose={closeForm} />
           </div>
           <div className="modal-overlay" onClick={closeForm}></div>
         </div>
