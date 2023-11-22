@@ -15,7 +15,7 @@ const taskSchema = new mongoose.Schema({
     taskStatus: {
         type: String,
         required: true,
-        enum: ["To Do", "In Progress", "Done"]
+        enum: ["To Do", "In Progress", "Done", "Overdue"]
     },
 
     taskOwner:{

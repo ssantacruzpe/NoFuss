@@ -35,17 +35,17 @@ function PieChart() {
     };
 
     const data = {
-        labels: ['To Do', 'In Progress'],
+        labels: ["To Do", "In Progress"],
         datasets: [{
-            label: 'Task Status Distribution',
+            label: "Task Status Distribution",
             data: [todoCount, inProgressCount],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)'
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
             ],
             borderWidth: 1
         }]
