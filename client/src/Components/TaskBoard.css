@@ -64,10 +64,29 @@
     justify-content: center;
 }
 
-.popup-content {
+.popup-content-delete {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
+}
+
+.popup-content-update {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.update-box{
+    margin: 40px;
+}
+
+.update-box .input{
+    display: flex;
+}
+
+.update-buttons{
+    display: flex;
+    justify-content: space-around;
 }
 
 .menu-button {

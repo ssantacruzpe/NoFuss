@@ -106,43 +106,55 @@ function TaskBoard() {
 
         {showUpdatePopup && (
                 <div className="popup">
-                    <div className="popup-content">
+                    <div className="popup-content-update">
                         <h3>Update Task</h3>
                         {selectedTask && (
                             <>
-                                <input 
-                                    type="text" 
-                                    value={updatedTaskName} 
-                                    onChange={(e) => setUpdatedTaskName(e.target.value)} 
-                                />
-                                <input 
-                                    type="date" 
-                                    value={updatedTaskDeadline} 
-                                    onChange={(e) => setUpdatedTaskDeadline(e.target.value)} 
-                                />
-                                <select 
-                                    value={updatedTaskStatus} 
-                                    onChange={(e) => setUpdatedTaskStatus(e.target.value)}>
-                                    <option value="To Do">To Do</option>
-                                    <option value="In Progress">In Progress</option>
-                                    <option value="Done">Done</option>
-                                </select>
-                                <input 
-                                    type="text" 
-                                    value={updatedTaskOwner} 
-                                    onChange={(e) => setUpdatedTaskOwner(e.target.value)} 
-                                />
+                            <div className="update-box">
+                                <p>What is the task?
+                                    <input 
+                                        type="text" 
+                                        value={updatedTaskName} 
+                                        onChange={(e) => setUpdatedTaskName(e.target.value)} 
+                                    />
+                                </p>
+                                <p>When is this task due?
+                                    <input  
+                                        type="date" 
+                                        value={updatedTaskDeadline} 
+                                        onChange={(e) => setUpdatedTaskDeadline(e.target.value)} 
+                                    />
+                                </p>
+                                <p>What is the status of the task?
+                                    <select 
+                                        value={updatedTaskStatus} 
+                                        onChange={(e) => setUpdatedTaskStatus(e.target.value)}>
+                                        <option value="To Do">To Do</option>
+                                        <option value="In Progress">In Progress</option>
+                                        <option value="Done">Done</option>
+                                    </select>
+                                </p>
+                                <p>Who is responsible for this task?
+                                    <input 
+                                        type="text" 
+                                        value={updatedTaskOwner} 
+                                        onChange={(e) => setUpdatedTaskOwner(e.target.value)} 
+                                    />
+                                </p>
+                                </div>
                             </>
                         )}
+                        <div className="update-buttons">
+                         <button onClick={() => setShowUpdatePopup(false)}>Cancel</button>
                         <button onClick={updateTask}>Save</button>
-                        <button onClick={() => setShowUpdatePopup(false)}>Cancel</button>
+                        </div>
                     </div>
                 </div>
             )}
 
         {showDeletePopup && (
               <div className="popup">
-                  <div className="popup-content">
+                  <div className="popup-content-delete">
                       <h3>Are you sure you want to delete this task?</h3>
                       <button onClick={deleteTask}>Confirm</button>
                       <button onClick={() => setShowDeletePopup(false)}>Cancel</button>
