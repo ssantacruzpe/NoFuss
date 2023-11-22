@@ -73,7 +73,29 @@ function TaskBoard() {
         }
     };
 
+    const onDragStart = (e, task) => {
+        e.dataTransfer.setData("task_id", task._id);
+        e.dataTransfer.effectAllowed = "move";
+    };
 
+    const onDragOver = (e) => {
+        e.preventDefault();
+    };
+    
+    const onDrop = (e, newStatus) => {
+        const taskId = e.dataTransfer.getData("task_id");
+        const taskToUpdate = tasks.find(task => task._id === taskId);
+        updateTaskStatus(taskToUpdate, newStatus);
+    };
+    
+    const updateTaskStatus = async (task, newStatus) => {
+        try {
+            await axios.put(`http://localhost:3000/hh/${task._id}`, { ...task, taskStatus: newStatus });
+            fetchTasks();
+        } catch (error) {
+            console.error("Error updating task:", error);
+        }
+    };
 
     const renderTaskSquare = (task) => {
         const deadline = new Date(task.taskDeadline);
@@ -82,7 +104,7 @@ function TaskBoard() {
         const taskSquareClass = `task-square ${isOverdue ? 'overdue' : ''}`;
 
         return (
-                <div key={task._id} className={taskSquareClass}>
+                <div key={task._id} className={taskSquareClass} draggable onDragStart={(e) => onDragStart(e, task)}>
                 <h3>{task.taskName}</h3>
                 <p>Deadline: {new Date(task.taskDeadline).toLocaleDateString()}</p>
                 <p>Owner: {task.taskOwner}</p>
@@ -99,12 +121,12 @@ function TaskBoard() {
 
     return (
         <div className="task-board">
-            {["To Do", "In Progress", "Done"].map((status) => (
-                <div key={status} className="column">
-                    <h2>{status}</h2>
-                    {tasks.filter(task => task.taskStatus === status).map(renderTaskSquare)}
-                </div>
-            ))}
+        {["To Do", "In Progress", "Done"].map((status) => (
+            <div key={status} className="column" onDragOver={onDragOver} onDrop={(e) => onDrop(e, status)}>
+                <h2>{status}</h2>
+                {tasks.filter(task => task.taskStatus === status).map(renderTaskSquare)}
+            </div>
+        ))}
 
         {showUpdatePopup && (
                 <div className="popup">

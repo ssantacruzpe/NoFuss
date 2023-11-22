@@ -12,6 +12,7 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 50px;
 }
 
 .task-square {
@@ -20,6 +21,11 @@
     margin-bottom: 10px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+
+.task-square:active {
+    cursor: grabbing;
 }
 
 .task-square h3 {
@@ -101,3 +107,4 @@
 .task-square.overdue {
     background-color: #fce2e2;
 }
+
