@@ -22,7 +22,7 @@ function PendingTasksBox() {
     return (
         <div className="in-progress-tasks-container">
             <div className="tasks-box">
-            <h1>Pending Tasks</h1>
+            <h1>To Do Tasks</h1>
                 <div className="column">
                     <h3>Task Name</h3>
                     {tasks.map(task => (
