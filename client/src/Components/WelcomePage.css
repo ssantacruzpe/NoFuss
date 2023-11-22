@@ -2,6 +2,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 100vh; /* Adjust height as needed */
-    padding-right: 50px; /* Space from the right edge */
+    height: 100vh; 
+    padding-right: 50px; 
 }

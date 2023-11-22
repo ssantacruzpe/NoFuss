@@ -78,3 +78,7 @@
     border: none;
     cursor: pointer;
 }
+
+.task-square.overdue {
+    background-color: #fce2e2;
+}

@@ -74,8 +74,13 @@ function TaskBoard() {
     };
 
     const renderTaskSquare = (task) => {
+        const deadline = new Date(task.taskDeadline);
+        const now = new Date();
+        const isOverdue = (task.taskStatus === "To Do" || task.taskStatus === "In Progress") && new Date(deadline.setDate(deadline.getDate() + 1)) < now;
+        const taskSquareClass = `task-square ${isOverdue ? 'overdue' : ''}`;
+
         return (
-            <div key={task._id} className="task-square">
+                <div key={task._id} className={taskSquareClass}>
                 <h3>{task.taskName}</h3>
                 <p>Deadline: {new Date(task.taskDeadline).toLocaleDateString()}</p>
                 <p>Owner: {task.taskOwner}</p>
