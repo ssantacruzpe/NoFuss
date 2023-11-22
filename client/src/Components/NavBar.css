@@ -3,33 +3,26 @@
     width: 15%;
     background-color: #6CCAC8; 
     position: fixed; 
-    left: 0; 
-    top: 0; 
     color: white; 
+    box-sizing: border-box;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
+    overflow-y: auto;
+    padding: 1rem;
 }
 
 .navbar .logo {
-    font-size: 4em; 
+    font-size: 3em; 
     font-weight: bold;
     margin: 10px 0; 
+    color: white;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0; 
+.sidebar .nav-pills .nav-link.active, .sidebar .nav-pills .nav-link.active:hover {
+    background-color: #7C75D1;
 }
 
-nav ul li a {
-    font-size: 2em; 
-    text-decoration: none; 
-    color: white; 
-    display: block; 
-    padding: 10px 20px; 
-}
-
-nav ul li a:hover {
-    background-color: #7C75D1; 
+.sidebar .nav-pills .nav-link {
+    border-radius: 0.25rem; 
 }
