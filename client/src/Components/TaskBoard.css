@@ -96,7 +96,15 @@
 .update-buttons{
     display: flex;
     justify-content: space-around;
+}
+
+.delete-buttons .button{
     background-color: #7C75D1;
+}
+
+.delete-buttons{
+    display: flex;
+    justify-content: space-around;
 }
 
 .menu-button {
@@ -111,5 +119,41 @@
 
 .task-square.overdue {
     background-color: #fce2e2;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-count {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: grey;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.status-underline {
+    border: none;
+    height: 4px;
+    margin: 10px;
+}
+
+.status-underline.to-do {
+    background-color: rgb(43, 4, 128);
+}
+
+.status-underline.in-progress {
+    background-color: rgb(243, 202, 22);
+}
+
+.status-underline.done {
+    background-color: rgb(15, 175, 151);
 }
 

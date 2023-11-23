@@ -96,6 +96,10 @@ function TaskBoard({ tasks, updateTasks }) {
         }
     };
 
+    const countTasks = (status) => {
+        return tasks.filter(task => task.taskStatus === status).length;
+    };
+
     const renderTaskSquare = (task) => {
         const deadline = new Date(task.taskDeadline);
         const now = new Date();
@@ -122,8 +126,12 @@ function TaskBoard({ tasks, updateTasks }) {
         <div className="task-board">
         {["To Do", "In Progress", "Done"].map((status) => (
             <div key={status} className="column" onDragOver={onDragOver} onDrop={(e) => onDrop(e, status)}>
-                <h2>{status}</h2>
-                {tasks.filter(task => task.taskStatus === status).map(renderTaskSquare)}
+                <div className="column-header">
+                        <h2>{status}</h2>
+                        <div className="task-count">{countTasks(status)}</div>
+                    </div>
+                    <hr className={`status-underline ${status.toLowerCase().replace(" ", "-")}`}/>
+                    {tasks.filter(task => task.taskStatus === status).map(renderTaskSquare)}
             </div>
         ))}
 
@@ -179,8 +187,10 @@ function TaskBoard({ tasks, updateTasks }) {
               <div className="popup">
                   <div className="popup-content-delete">
                       <h3>Are you sure you want to delete this task?</h3>
-                      <button onClick={deleteTask}>Confirm</button>
-                      <button onClick={() => setShowDeletePopup(false)}>Cancel</button>
+                      <div className="delete-buttons">
+                        <button onClick={() => setShowDeletePopup(false)}>Cancel</button>
+                        <button onClick={deleteTask}>Confirm</button>
+                      </div>
                   </div>
               </div>
             )}
