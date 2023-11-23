@@ -14,7 +14,7 @@ function TopBar() {
         <div className="top-hi">
             <div className="nav-content">
                 <h1>Hello userName</h1>
-                <h3>Today is {dateString}</h3>
+                <h4>Today is {dateString}</h4>
             </div>
         </div>
     );

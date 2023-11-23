@@ -2,30 +2,44 @@
 
 .navbar {
     height: 100vh; 
-    width: 15%;
+    width: 18%;
     background-color: #6CCAC8; 
     position: fixed; 
+    left: 0; 
+    top: 0; 
     color: white; 
-    box-sizing: border-box;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    overflow-y: auto;
-    padding: 1rem;
     font-family: 'Jockey One';
 }
 
 .navbar .logo {
-    font-size: 4em; 
+    font-size: 2em; 
     font-weight: bold;
-    margin: 10px 0; 
     color: white;
+    margin: 10px 0; 
+    padding: 10px;
+
 }
 
-.sidebar .nav-pills .nav-link.active, .sidebar .nav-pills .nav-link.active:hover {
-    background-color: #7C75D1;
+.navbar ul {
+    list-style-type: none; 
+    padding: 0; 
 }
 
-.sidebar .nav-pills .nav-link {
-    border-radius: 0.25rem; 
+.navbar ul li a {
+    text-decoration: none; 
+    color: white; 
+    display: block; 
+    padding: 10px 20px; 
+}
+
+.navbar ul li a:hover {
+    background-color: #7C75D1; 
+}
+
+.logout{
+    list-style-type: none; 
+    margin:20px;
 }
