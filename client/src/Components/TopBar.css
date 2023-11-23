@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: #f0f0f0; 
+    background-color: #f8e6b3;
     padding: 0 20px;
     margin-bottom: 20px;
   }
@@ -16,7 +16,6 @@
   
   h1 {
     margin-right: 20px; 
-    font-size: 30px; 
     font-family: Jockey One;
     color: #7C75D1;
   }

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./TaskBoard.css";
 
-function TaskBoard() {
-    const [tasks, setTasks] = useState([]);
+function TaskBoard({ tasks, updateTasks }) {
     const [selectedTask, setSelectedTask] = useState(null);
     const [showMenu, setShowMenu] = useState(false);
     const [showUpdatePopup, setShowUpdatePopup] = useState(false);
@@ -20,7 +19,7 @@ function TaskBoard() {
     const fetchTasks = async () => {
         try {
             const response = await axios.get("http://localhost:3000/hh/tasks");
-            setTasks(response.data.tasks);
+            updateTasks (response.data.tasks);
         } catch (error) {
             console.error("Error fetching tasks:", error);
         }

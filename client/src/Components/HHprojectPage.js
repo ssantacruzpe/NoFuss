@@ -25,6 +25,10 @@ function HHprojectPage() {
         }
     };
 
+    const updateTasks = (newTasks) => {
+        setTasks(newTasks);
+    };
+
     const getUniqueOwners = () => {
         const owners = tasks.map(task => task.taskOwner);
         return [...new Set(owners)];
@@ -53,7 +57,7 @@ function HHprojectPage() {
                 <SearchFilter onSearch={handleSearch} />
                 <FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} />
             </div>
-            <TaskBoard tasks={filteredTasks} />
+            <TaskBoard tasks={filteredTasks} updateTasks={updateTasks}/>
         </div>
     );
 }

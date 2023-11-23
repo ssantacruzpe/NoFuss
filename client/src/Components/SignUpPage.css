@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One');
+
 .sign-up {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -11,15 +14,17 @@
     color: #7C75D1;
     font-size: xxx-large;
     margin: 50px;
+    font-family: Jockey One;
   }
   
 .sign-up-title{
     color: #6CCAC8;
-    font-size: xx-large;
+    font-family: DM Sans;
   }
 
 .form-container {
     margin: 50px;
+    font-family: DM Sans;
   }
   
   
