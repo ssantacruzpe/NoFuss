@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+
+form{
+    font-family:DM Sans;
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-buttons button{
+    background-color: #7C75D1;
+}

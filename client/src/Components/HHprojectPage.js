@@ -49,9 +49,9 @@ function HHprojectPage() {
             <NavBar/>
             <TopBar/>
             <div className="useful-buttons">
-            <AddTaskBtn />
-            <SearchFilter onSearch={handleSearch} />
-            <FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} />
+                <AddTaskBtn />
+                <SearchFilter onSearch={handleSearch} />
+                <FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} />
             </div>
             <TaskBoard tasks={filteredTasks} />
         </div>

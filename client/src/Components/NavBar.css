@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One');
+
 .navbar {
     height: 100vh; 
     width: 15%;
@@ -10,6 +12,7 @@
     align-items: center; 
     overflow-y: auto;
     padding: 1rem;
+    font-family: 'Jockey One';
 }
 
 .navbar .logo {

@@ -169,8 +169,8 @@ function TaskBoard() {
                             </>
                         )}
                         <div className="update-buttons">
-                         <button onClick={() => setShowUpdatePopup(false)}>Cancel</button>
-                        <button onClick={updateTask}>Save</button>
+                            <button onClick={() => setShowUpdatePopup(false)}>Cancel</button>
+                            <button onClick={updateTask}>Save</button>
                         </div>
                     </div>
                 </div>

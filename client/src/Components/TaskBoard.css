@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+
 .task-board {
     display: flex;
     justify-content: space-between;
@@ -22,6 +24,7 @@
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     cursor: grab;
+    font-family: DM Sans;
 }
 
 .task-square:active {
@@ -93,6 +96,7 @@
 .update-buttons{
     display: flex;
     justify-content: space-around;
+    background-color: #7C75D1;
 }
 
 .menu-button {

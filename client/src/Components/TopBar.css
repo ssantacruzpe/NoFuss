@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One');
+
 .top-hi {
     display: flex;
     align-items: center;
@@ -9,23 +11,15 @@
   
   .nav-content {
     align-items: center;
+    padding: 10px;
   }
   
   h1 {
     margin-right: 20px; 
-    font-size: 24px; 
+    font-size: 30px; 
+    font-family: Jockey One;
+    color: #7C75D1;
   }
   
-  .logoutButton {
-    padding: 10px 20px;
-    background-color: #4CAF50; 
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .logoutButton:hover {
-    background-color: #45a049; 
-  }
+ 
   

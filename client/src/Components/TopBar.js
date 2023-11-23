@@ -5,8 +5,7 @@ function TopBar() {
     return (
         <div className="top-hi">
             <div className="nav-content">
-                <h1>Hello</h1>
-                <button className="logoutButton">Logout</button>
+                <h1>Hello userName</h1>
             </div>
         </div>
     );
