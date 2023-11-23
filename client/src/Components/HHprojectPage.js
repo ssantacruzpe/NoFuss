@@ -5,6 +5,7 @@ import TaskBoard from "./TaskBoard";
 import FilterOwner from "./FilterOwner";
 import SearchFilter from "./SearchFilter";
 import NavBar from "./NavBar";
+import TopBar from "./TopBar";
 
 function HHprojectPage() {
     const [tasks, setTasks] = useState([]);
@@ -46,9 +47,12 @@ function HHprojectPage() {
     return (
         <div>
             <NavBar/>
+            <TopBar/>
+            <div className="useful-buttons">
             <AddTaskBtn />
-            <FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} />
             <SearchFilter onSearch={handleSearch} />
+            <FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} />
+            </div>
             <TaskBoard tasks={filteredTasks} />
         </div>
     );
