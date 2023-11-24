@@ -18,10 +18,13 @@ function TaskBoard({ tasks, updateTasks }) {
 
     const fetchTasks = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/hh/tasks");
-            updateTasks (response.data.tasks);
+            const token = localStorage.getItem('token');
+            const response = await axios.get("http://localhost:3000/hh/tasks", {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            updateTasks(response.data.tasks);
         } catch (error) {
-            console.error("Error fetching tasks:", error);
+            console.error("Error fetching tasks:", error.response || error);
         }
     };
 

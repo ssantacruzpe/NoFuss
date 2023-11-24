@@ -1,31 +1,28 @@
 const taskEntries = require("../Model/model");
 
-const createTask = async (req, res) =>{
-    try{
-        let newTask = req.body;
-        let task = await taskEntries.create(newTask)
-        res
-            .send({msg:"New task successfully created", task})
-    } catch (error){
-        res
-            .status(500)
-            .send({msg:"Internal error, failed to create new task"})
+const createTask = async (req, res) => {
+    try {
+        let newTaskData = {
+            ...req.body,
+            userId: req.user.id 
+        };
+        let task = await taskEntries.create(newTaskData);
+        res.send({ msg: "New task successfully created", task });
+    } catch (error) {
+        console.error('Error in createTask:', error);
+        res.status(500).send({ msg: "Internal error, failed to create new task" });
     }
-}
+};
 
-const getAllTasks = async (req, res) =>{
-    try{
+const getAllTasks = async (req, res) => {
+    try {
         let userId = req.user.id;
-        let tasks = await taskEntries.find({ taskOwner: userId })
-        res
-            .status(200)
-            .send({msg:"We successfully retrieved all tasks", tasks})
-    } catch (error){
-        res
-            .status(500)
-            .send({msg:"Internal error, failed to retrieve tasks"})
+        let tasks = await taskEntries.find({ userId: userId })
+        res.status(200).send({ msg: "We successfully retrieved all tasks", tasks })
+    } catch (error) {
+        res.status(500).send({ msg: "Internal error, failed to retrieve tasks" })
     }
-}
+};
 
 const deleteTask = async (req, res) =>{
     try{

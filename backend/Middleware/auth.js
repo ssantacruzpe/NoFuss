@@ -9,14 +9,17 @@ const verifyToken = (req, res, next) => {
         }
 
         const token = authHeader.split(' ')[1];
-        const decoded = jwt.verify(token, process.env.PRIVATE_KEY); 
+        if (!token) {
+            return res.status(403).send({msg: "Bearer token is missing"});
+        }
 
+        const decoded = jwt.verify(token, process.env.PRIVATE_KEY); 
         req.user = decoded; 
         next();
     } catch(err) {
         console.error(err);
         res.status(401).send({msg: "Invalid or expired token"});
     }
-}
+};
 
 module.exports = verifyToken;

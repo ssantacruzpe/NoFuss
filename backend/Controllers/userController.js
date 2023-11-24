@@ -43,7 +43,7 @@ const login = async(req, res) =>{
                     .status(401)
                     .send({msg:"Invalid password"})
             } else {
-                let token = jwt.sign({email:existingUser.email, id:existingUser._id, userName:existingUser.userName}, process.env.PRIVATE_KEY, {expiresIn: "3h"});
+                let token = jwt.sign({email: existingUser.email, id: existingUser._id, userName: existingUser.userName}, process.env.PRIVATE_KEY, {expiresIn: "3h"});
                 res 
                     .status(200)
                     .send({msg:"Successful login", token});

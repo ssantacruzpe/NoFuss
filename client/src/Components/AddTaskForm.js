@@ -13,11 +13,15 @@ function AddTaskForm({ onClose }){
 
     async function createTaskForm(e){
         e.preventDefault();
-        try {
-            let res = await axios.post("http://localhost:3000/hh/create", { taskName, taskDeadline, taskStatus, taskOwner });
-            alert(res.data.msg);
-            onClose();
-            navigate("/hh");
+            try {
+                const token = localStorage.getItem('token');
+                let res = await axios.post("http://localhost:3000/hh/create", 
+                    { taskName, taskDeadline, taskStatus, taskOwner },
+                    { headers: { Authorization: `Bearer ${token}` } }
+                );
+                alert(res.data.msg);
+                onClose();
+                navigate("/hh");
         } catch (error) {
             console.error("Error adding task", error);
         }
