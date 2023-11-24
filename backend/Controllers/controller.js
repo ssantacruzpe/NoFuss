@@ -15,7 +15,8 @@ const createTask = async (req, res) =>{
 
 const getAllTasks = async (req, res) =>{
     try{
-        let tasks = await taskEntries.find()
+        let userId = req.user.id;
+        let tasks = await taskEntries.find({ taskOwner: userId })
         res
             .status(200)
             .send({msg:"We successfully retrieved all tasks", tasks})

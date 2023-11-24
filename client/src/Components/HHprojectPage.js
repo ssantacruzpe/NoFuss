@@ -18,7 +18,11 @@ function HHprojectPage() {
 
     const fetchTasks = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/hh/tasks");
+            const response = await axios.get("http://localhost:3000/hh/tasks", {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}` 
+                }
+            });
             setTasks(response.data.tasks);
         } catch (error) {
             console.error("Error fetching tasks:", error);
