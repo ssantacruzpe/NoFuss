@@ -1,28 +1,21 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const verifyToken = (req, res, next) =>{
-    try{
-        let receivedToken = req.headers.authorization.split("")[1];
-        if (!receivedToken){
-            return res
-                .status(403)
-                .send({msg:"Token does not exist"})
-        } else{
-            let verifyToken = jwt.verify(receivedToken, process.env.PRIVATE_KEY);
-            if (!verifyToken){
-                return res
-                    .status(401)
-                    .send({msg:"Not authorized"});
-            } else{
-                req.user = verifyToken;
-                next();
-            }
+
+const verifyToken = (req, res, next) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+            return res.status(403).send({msg: "Authorization token is missing"});
         }
-    } catch(err){
-        console.log(err);
-        res 
-            .status(500)
-            .send({msg:"Internal server error"});
+
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, process.env.PRIVATE_KEY); 
+
+        req.user = decoded; 
+        next();
+    } catch(err) {
+        console.error(err);
+        res.status(401).send({msg: "Invalid or expired token"});
     }
 }
 

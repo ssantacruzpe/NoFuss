@@ -1,7 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import { jwtDecode } from 'jwt-decode';
 import "./NavBar.css"; 
 
 const NavBar = () => {
+    let navigate = useNavigate(); 
+    let token;
+    let decoded;
+
+    try {
+        token = localStorage.getItem('token');
+        decoded = jwtDecode(token);
+        } catch (err) {
+          console.log(err);
+        }
+
+    const handleLogout = () => {
+        if (token) {
+          localStorage.removeItem("token");
+          navigate("/login");
+          window.location.reload()
+        } else {
+          return;
+        }
+      }
+
     return (
         <div className="navbar">
             <div className="logo">
@@ -24,9 +47,7 @@ const NavBar = () => {
                     </ul>
                 <hr/>
                     <li className="logout">
-                            <a href="#">
-                                LogOut
-                            </a>
+                            <button onClick={handleLogout}>Log Out</button>
                         </li>
             </div>
         </div>

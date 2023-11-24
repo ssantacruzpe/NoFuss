@@ -61,4 +61,15 @@ const login = async(req, res) =>{
     }
 };
 
-module.exports = { register, login};
+const getUserInfo = async (req, res) => {
+    try {
+        let userId = req.user.id; 
+        let user = await User.findById(userId).select('userName');
+        res.status(200).send({ userName: user.userName });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ msg: "Internal server error" });
+    }
+};
+
+module.exports = { register, login, getUserInfo};
