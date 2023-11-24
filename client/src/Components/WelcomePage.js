@@ -14,8 +14,16 @@ function WelcomePage(){
         <TopBar/>
         <div className="welcome-body">
             <h1 className="welcome-title">Dashboard</h1>
-            <div className="pie-chart-container">
-                    <PieChart />
+            <div className="data-section">
+                <div className="to-do-section">
+                    <h2>To Do Tasks</h2>
+                    <p>Chart#</p>
+                    <h3>Priority</h3>
+                </div>
+                    <div className="pie-chart-container">
+                            <PieChart />
+                    </div>
+                
             </div>
         </div>
     </div>

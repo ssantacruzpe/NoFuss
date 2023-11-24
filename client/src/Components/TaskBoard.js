@@ -8,6 +8,7 @@ function TaskBoard({ tasks, updateTasks }) {
     const [showUpdatePopup, setShowUpdatePopup] = useState(false);
     const [showDeletePopup, setShowDeletePopup] = useState(false);
     const [updatedTaskName, setUpdatedTaskName] = useState("");
+    const [updatedTaskPriority, setUpdatedTaskPriority] = useState("");
     const [updatedTaskDeadline, setUpdatedTaskDeadline] = useState("");
     const [updatedTaskStatus, setUpdatedTaskStatus] = useState("");
     const [updatedTaskOwner, setUpdatedTaskOwner] = useState("");
@@ -36,6 +37,7 @@ function TaskBoard({ tasks, updateTasks }) {
     const handleUpdateClick = () => {
       if (selectedTask) {
           setUpdatedTaskName(selectedTask.taskName);
+          setUpdatedTaskPriority(selectedTask.taskPriority);
           setUpdatedTaskDeadline(selectedTask.taskDeadline);
           setUpdatedTaskStatus(selectedTask.taskStatus); 
           setUpdatedTaskOwner(selectedTask.taskOwner);
@@ -53,6 +55,7 @@ function TaskBoard({ tasks, updateTasks }) {
       try {
           const updatedTaskInfo = {
               taskName: updatedTaskName,
+              taskPriority: updatedTaskPriority,
               taskDeadline: updatedTaskDeadline,
               taskStatus: updatedTaskStatus,
               taskOwner: updatedTaskOwner
@@ -111,6 +114,7 @@ function TaskBoard({ tasks, updateTasks }) {
 
         return (
                 <div key={task._id} className={taskSquareClass} draggable onDragStart={(e) => onDragStart(e, task)}>
+                <p>{task.taskPriority}</p>
                 <h3>{task.taskName}</h3>
                 <p>Deadline: {new Date(task.taskDeadline).toLocaleDateString()}</p>
                 <p>Owner: {task.taskOwner}</p>
@@ -151,6 +155,15 @@ function TaskBoard({ tasks, updateTasks }) {
                                         value={updatedTaskName} 
                                         onChange={(e) => setUpdatedTaskName(e.target.value)} 
                                     />
+                                </p>
+                                <p>What is the priority of this task?
+                                    <select 
+                                        value={updatedTaskPriority} 
+                                        onChange={(e) => setUpdatedTaskPriority(e.target.value)}>
+                                        <option value="High">High</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Low">Low</option>
+                                    </select>
                                 </p>
                                 <p>When is this task due?
                                     <input  
