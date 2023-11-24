@@ -22,11 +22,14 @@ function PieChart() {
 
     const fetchTaskCounts = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/hh/tasks");
+            const token = localStorage.getItem('token');
+            const response = await axios.get("http://localhost:3000/hh/tasks", {
+                headers: { Authorization: `Bearer ${token}` }
+            });
             const tasks = response.data.tasks;
             const todoTasks = tasks.filter(task => task.taskStatus === "To Do").length;
             const inProgressTasks = tasks.filter(task => task.taskStatus === "In Progress").length;
-
+    
             setTodoCount(todoTasks);
             setInProgressCount(inProgressTasks);
         } catch (error) {
@@ -35,17 +38,17 @@ function PieChart() {
     };
 
     const data = {
-        labels: ["To Do", "In Progress"],
+        labels: ["In Progress", "To Do"],
         datasets: [{
             label: "Task Status Distribution",
-            data: [todoCount, inProgressCount],
+            data: [inProgressCount, todoCount],
             backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 252, 220, 1)",
+                "rgba(207, 203, 255, 1)",
             ],
             borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
+                "rgba(255, 252, 220, 1)",
+                "rgba(207, 203, 255, 1)",
             ],
             borderWidth: 1
         }]

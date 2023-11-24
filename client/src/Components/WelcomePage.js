@@ -12,10 +12,11 @@ function WelcomePage(){
         <div>
         <NavBar/>
         <TopBar/>
+        <div className="welcome-body">
             <h1 className="welcome-title">Dashboard</h1>
-        <PendingTasksBox/>
-        <div className="pie-chart-container">
-                <PieChart />
+            <div className="pie-chart-container">
+                    <PieChart />
+            </div>
         </div>
     </div>
     );

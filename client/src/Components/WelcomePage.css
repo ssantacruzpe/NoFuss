@@ -1,7 +1,13 @@
+.welcome-body{
+    position: fixed;
+    left: 30%;
+}
+
 .welcome-title{
     position: fixed;
-    color:red; 
-    text-align:center;
+    color:#6CCAC8; 
+    text-align:left;
+    font-size: xxx-large;
 }
 
 .pie-chart-container {
