@@ -1,3 +1,9 @@
+.welcome-title{
+    position: fixed;
+    color:red; 
+    text-align:center;
+}
+
 .pie-chart-container {
     display: flex;
     justify-content: flex-end;
