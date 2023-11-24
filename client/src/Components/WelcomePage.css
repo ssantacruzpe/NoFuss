@@ -1,6 +1,6 @@
 .welcome-body{
     position: fixed;
-    left: 30%;
+    left: 20%;
 }
 
 .welcome-title{
@@ -9,10 +9,12 @@
     font-size: xxx-large;
 }
 
-.pie-chart-container {
+.data-section{
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    margin-top: 30px;
+}
+
+.pie-chart-container {
     height: 100vh; 
     padding-right: 50px; 
 }

@@ -114,7 +114,7 @@ function TaskBoard({ tasks, updateTasks }) {
 
         return (
                 <div key={task._id} className={taskSquareClass} draggable onDragStart={(e) => onDragStart(e, task)}>
-                <p>{task.taskPriority}</p>
+                <p className={`priority-label ${task.taskPriority.toLowerCase().replace(" ", "-")}`}>{task.taskPriority}</p>
                 <h3>{task.taskName}</h3>
                 <p>Deadline: {new Date(task.taskDeadline).toLocaleDateString()}</p>
                 <p>Owner: {task.taskOwner}</p>

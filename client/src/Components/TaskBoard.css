@@ -157,3 +157,23 @@
     background-color: rgb(15, 175, 151);
 }
 
+.priority-label {
+    border: none;
+    padding: 5px;
+}
+
+.priority-label.high {
+    background-color: #FCF2F2;
+    color: #E1929A;
+}
+
+.priority-label.medium  {
+    background-color: #F9EEE3;
+    color: #D48D49;
+}
+
+.priority-label.low  {
+    background-color: #e3f9f7;
+    color: #49c8d4;
+}
+

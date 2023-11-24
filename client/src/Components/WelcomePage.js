@@ -23,8 +23,13 @@ function WelcomePage(){
                     <div className="pie-chart-container">
                             <PieChart />
                     </div>
-                
+                <div className="in-progress-section">
+                    <h2>In Progress Tasks</h2>
+                    <p>Chart#</p>
+                    <h3>Priority</h3>
+                </div>
             </div>
+            <button>Review Board</button>
         </div>
     </div>
     );
