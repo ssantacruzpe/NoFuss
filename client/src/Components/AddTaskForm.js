@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AddTaskForm.css"; 
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 
 function AddTaskForm({ onClose }){
@@ -20,9 +21,9 @@ function AddTaskForm({ onClose }){
                     { taskName, taskPriority, taskDeadline, taskStatus, taskOwner },
                     { headers: { Authorization: `Bearer ${token}` } }
                 );
-                alert(res.data.msg);
-                onClose();
-                navigate("/hh");
+                    toast.success(res.data.msg);
+                    onClose();
+                    navigate("/hh");
         } catch (error) {
             console.error("Error adding task", error);
         }
@@ -30,10 +31,11 @@ function AddTaskForm({ onClose }){
 
     return(
         <div>
+            <ToastContainer />
             <div>
                 <h1 id="addTaskFormTitle">Add A Task</h1>
             </div>
-             <form id="addTaskForm" onSubmit={createTaskForm} value="taskCreateForm">
+             <form id="addTaskForm" onSubmit={createTaskForm}>
                 <input 
                     type="text" 
                     value={taskName} 
@@ -44,7 +46,7 @@ function AddTaskForm({ onClose }){
                     <option hidden value="prompt">What is the priority of this task?</option>
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>
-                    <option value="Low ">Low</option>
+                    <option value="Low">Low</option>
                 </select>
                 <input 
                     type="date" 
@@ -66,7 +68,7 @@ function AddTaskForm({ onClose }){
                 />
                 <div className="form-buttons">
                     <button type="button" onClick={onClose}>Cancel</button>
-                    <button type="submit" onClick={createTaskForm}>Add Task</button>
+                    <button type="submit">Add Task</button>
                 </div>
             </form>
         </div>

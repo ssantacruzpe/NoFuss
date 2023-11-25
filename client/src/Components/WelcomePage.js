@@ -1,5 +1,4 @@
 import "./WelcomePage.css"; 
-import PendingTasksBox from "./PendingTasksBox"
 import NavBar from "./NavBar";
 import PieChart from "./PieChart";
 import TopBar from "./TopBar";

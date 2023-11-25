@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AddTaskBtn.css"; 
 import AddTaskForm from "./AddTaskForm";
 
-function AddTaskBtn(){
+function AddTaskBtn({}){
   const [showForm, setShowForm] = useState(false);
 
   const openForm = () => setShowForm(true);
