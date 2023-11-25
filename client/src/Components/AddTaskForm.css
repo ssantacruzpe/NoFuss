@@ -27,3 +27,8 @@ form{
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.error-message{
+    font-size: x-small;
+    color: darkred;
+}

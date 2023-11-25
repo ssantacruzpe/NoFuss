@@ -25,6 +25,11 @@ function AddTaskForm({ onClose }){
         return Object.values(tempErrors).every(x => x === "");
     };
 
+    const handleInputChange = (setterFunction, field) => (e) => {
+        setterFunction(e.target.value);
+        setErrors({ ...errors, [field]: "" });
+    };
+
     async function createTaskForm(e) {
         e.preventDefault();
         if (!validateForm()) {
@@ -56,14 +61,14 @@ function AddTaskForm({ onClose }){
                 <input 
                     type="text" 
                     value={taskName} 
-                    onChange={(e) => setTaskName(e.target.value)} 
+                    onChange={handleInputChange(setTaskName, 'taskName')} 
                     placeholder="What is the task?"
                     style={{ borderColor: errors.taskName ? "red" : "" }}
                 />
                         {errors.taskName && <div className="error-message">{errors.taskName}</div>}
                 <select 
                     value={taskPriority} 
-                    onChange={(e) => setTaskPriority(e.target.value)}
+                    onChange={handleInputChange(setTaskPriority, 'taskPriority')}
                     style={{ borderColor: errors.taskPriority ? "red" : "" }}>
                         <option hidden value="prompt">What is the priority of this task?</option>
                         <option value="High">High</option>
@@ -74,14 +79,14 @@ function AddTaskForm({ onClose }){
                 <input 
                     type="date" 
                     value={taskDeadline} 
-                    onChange={(e) => setTaskDeadline(e.target.value)}
+                    onChange={handleInputChange(setTaskDeadline, 'taskDeadline')}
                     placeholder="When is this task due?" 
                     style={{ borderColor: errors.taskDeadline ? "red" : "" }}
                 />
                         {errors.taskDeadline && <div className="error-message">{errors.taskDeadline}</div>}
                 <select 
                     value={taskStatus} 
-                    onChange={(e) => setTaskStatus(e.target.value)}
+                    onChange={handleInputChange(setTaskStatus, 'taskStatus')}
                     style={{ borderColor: errors.taskStatus ? "red" : "" }}>
                         <option hidden value="prompt">What is the status of the task?</option>
                         <option value="To Do">To Do</option>
