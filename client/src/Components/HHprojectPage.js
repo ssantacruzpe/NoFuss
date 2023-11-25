@@ -55,17 +55,27 @@ function HHprojectPage() {
 
     return (
         <div>
-            <NavBar/>
-            <TopBar/>
+            <div className="navbar-hh">
+                <NavBar/>
+            </div>
+            <div className="top-bar-hh">
+                <TopBar/>
+            </div>
             <div className="container">
                 <h2 className="board-title">My Board</h2>
-                <div className="useful-buttons">
-                    <div><AddTaskBtn /></div>
-                    <div><SearchFilter onSearch={handleSearch} /></div>
-                    <div><FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} /></div>
+                <div className="">
+                    <div className="useful-buttons">
+                        <div className="add-btn">
+                            <div><AddTaskBtn /></div>
+                        </div>
+                        <div className="search-filter">
+                            <div className="search-box"><SearchFilter onSearch={handleSearch} /></div>
+                            <div className="filter-box"><FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} /></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
             <TaskBoard tasks={filteredTasks} updateTasks={updateTasks}/>
+            </div>
         </div>
     );
     

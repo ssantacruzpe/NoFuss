@@ -55,9 +55,9 @@ function AddTaskForm({ onClose }){
         <div>
            <Toaster />
             <div>
-                <h1 id="addTaskFormTitle">Add A Task</h1>
+                <h1 className="add-title">Add A Task</h1>
             </div>
-             <form id="addTaskForm" onSubmit={createTaskForm}>
+             <form className="add-form" onSubmit={createTaskForm}>
                 <input 
                     type="text" 
                     value={taskName} 

@@ -2,12 +2,12 @@
 @import 'react-toastify/dist/ReactToastify.css';
 
 
-#addTaskFormTitle{
+.add-title{
     color: #6CCAC8;
 }
 
 form{
-    font-family:DM Sans;
+    font-family:"DM Sans";
 }
 
 .form-buttons{
@@ -18,17 +18,25 @@ form{
 .form-buttons button{
     background-color: #7C75D1;
 }
-.addTaskForm .input{
-    margin: 5px;
-}
 
-.addTaskForm .select{
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.add-form {
+    width: 85%; 
+    margin-left: 15%; 
+    padding: 20px;
+    font-family: "DM Sans";
 }
 
 .error-message{
     font-size: x-small;
     color: darkred;
+}
+.add-form input[type=text],
+.add-form input[type=date],
+.add-form select {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: gray;
 }

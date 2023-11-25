@@ -1,4 +1,22 @@
-.filter-owner{
-    position: relative;
-    left: 50%;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+
+.filter-owner .select {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: gray;
+}
+
+.filter-icon {
+    margin-right: 10px;
+}
+
+.owner-select .select {
+    padding: 10px;
+    border-radius: 5px;
 }

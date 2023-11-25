@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One');
+
+.navbar-hh{
+    position: fixed;
+    width: 100%; 
+    z-index: 1000; 
+}
+
 .useful-buttons {
-    display: flex;
-    justify-content: center; 
-    gap: 20px; 
+    display: flex; 
+    justify-content: space-between;
 }
 
 .board-title{
     color:#6CCAC8; 
     text-align:left;
     font-size: xxx-large;
+    font-family: Jockey One;
+    margin-bottom: 20px;
+}
+
+.container{
+    margin-left: 15%; 
+}
+
+.search-filter{
+    display: flex;
+    justify-content: space-between;
+}
+.search-box{
+    padding-right: 20px;
+}
+.filter-box{
+    padding-right: 30px;
 }

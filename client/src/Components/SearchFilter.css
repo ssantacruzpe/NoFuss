@@ -1,4 +1,20 @@
-.search-bar{
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+
+.search-bar {
     position: relative;
-    left: 30%;
+    width: 100%;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding-right: 30px; 
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #ccc; 
+    font-size: "DM Sans";
 }
