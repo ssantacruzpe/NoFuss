@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+@import 'react-toastify/dist/ReactToastify.css';
+
+
+#addTaskFormTitle{
+    color: #6CCAC8;
+}
 
 form{
     font-family:DM Sans;
@@ -11,4 +17,13 @@ form{
 
 .form-buttons button{
     background-color: #7C75D1;
+}
+.addTaskForm .input{
+    margin: 5px;
+}
+
+.addTaskForm .select{
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
