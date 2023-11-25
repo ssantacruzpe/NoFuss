@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./HHprojectPage.css";
 import AddTaskBtn from "./AddTaskBtn";
 import TaskBoard from "./TaskBoard";
 import FilterOwner from "./FilterOwner";
@@ -56,14 +57,18 @@ function HHprojectPage() {
         <div>
             <NavBar/>
             <TopBar/>
-            <div className="useful-buttons">
-                <AddTaskBtn />
-                <SearchFilter onSearch={handleSearch} />
-                <FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} />
+            <div className="container">
+                <h2 className="board-title">My Board</h2>
+                <div className="useful-buttons">
+                    <div><AddTaskBtn /></div>
+                    <div><SearchFilter onSearch={handleSearch} /></div>
+                    <div><FilterOwner owners={getUniqueOwners()} onOwnerSelect={handleOwnerSelect} /></div>
+                </div>
             </div>
             <TaskBoard tasks={filteredTasks} updateTasks={updateTasks}/>
         </div>
     );
+    
 }
 
 export default HHprojectPage;

@@ -1,3 +1,11 @@
-.useful-buttons{
+.useful-buttons {
     display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.board-title{
+    color:#6CCAC8; 
+    text-align:left;
+    font-size: xxx-large;
 }
