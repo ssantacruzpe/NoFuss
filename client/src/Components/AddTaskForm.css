@@ -16,12 +16,21 @@ form{
 }
 
 .form-buttons button{
-    background-color: #7C75D1;
+    padding: 10px;
+    width: 200px;
+    background-color: #4b3ca8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top:20px;
 }
-
+  
+button:hover {
+    background-color: #413c69;
+  }
 .add-form {
-    width: 85%; 
-    margin-left: 15%; 
     padding: 20px;
     font-family: "DM Sans";
 }

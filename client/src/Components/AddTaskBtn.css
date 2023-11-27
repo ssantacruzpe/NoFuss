@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+
 .modal {
     position: fixed;
     z-index: 1;
@@ -47,7 +49,13 @@
   }
   
 .add-task-btn{
-  position: relative;
-  left: 50%;
-  background-color: #7C75D1;
+    padding: 10px;
+    width: 400px;
+    background-color: #4b3ca8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-family: "DM Sans";
 }
