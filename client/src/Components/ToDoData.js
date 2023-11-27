@@ -63,7 +63,10 @@ function ToDoData() {
             <div className="to-do-section">
                 <div className='left-data-side'>
                     <h2>To Do</h2>
-                    <p>{totalToDoTasks} Tasks</p> 
+                    <div className="number-tasks">
+                        <p className="number-data">{totalToDoTasks}</p> 
+                        <p className="tasks">Tasks</p>
+                    </div>
                 </div>
                 <div>
                     <Pie data={data} />

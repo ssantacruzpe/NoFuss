@@ -24,9 +24,15 @@ function WelcomePage(){
                     </div>
                 </div>
                 <div className="right-side-msg">
-                    <span>Let's get things done!</span>
-                    <img src="https://static.vecteezy.com/system/resources/previews/027/669/113/original/happy-woman-raising-hands-up-semi-flat-color-character-girl-overwhelmed-with-happiness-editable-half-body-person-on-white-simple-cartoon-spot-illustration-for-web-graphic-design-vector.jpg" alt="hands-up"></img>
-                    <button>Review Board</button>
+                    <div className="text-right-side">
+                        <span>Let's get things done!</span>
+                    </div>
+                    <div className="image-right-side">
+                        <img src="https://static.vecteezy.com/system/resources/previews/027/669/113/original/happy-woman-raising-hands-up-semi-flat-color-character-girl-overwhelmed-with-happiness-editable-half-body-person-on-white-simple-cartoon-spot-illustration-for-web-graphic-design-vector.jpg" alt="hands-up"></img>
+                    </div>
+                    <div className="right-button-text">
+                        <span><a href="http://localhost:3001/hh">Review Board</a></span>
+                    </div>
                 </div>
             </div>
         </div>

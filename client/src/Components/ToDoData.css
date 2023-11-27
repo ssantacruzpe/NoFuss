@@ -1,6 +1,43 @@
-.to-do-container{
-    border-color: red;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+
+
 .to-do-section{
     display: flex;
+    margin-bottom: 30px;
+}
+
+.left-data-side {
+    margin-right: 40px;
+}
+
+.left-data-side h2{
+    font-family: "DM Sans";
+    font-weight: bolder;
+    color: rgb(74, 73, 73);
+}
+.number-tasks{
+    margin-top:60px;
+}
+
+.left-data-side .number-data{
+    font-family: "DM Sans";
+    font-weight: bolder;
+    background-color: rgb(115, 96, 157);
+    border-radius: 10px;
+    color: white;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    padding: 32px;
+    font-size: xx-large;
+    margin-left: 10px;
+}
+
+.left-data-side .tasks{
+    font-family: "DM Sans";
+    font-weight: bolder;
+    color: rgb(74, 73, 73);
+    font-size: large;
+    margin-left:30px;
+    margin-top:-10px;
 }

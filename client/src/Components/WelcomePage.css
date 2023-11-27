@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+
 .welcome-body{
     margin-left: 250px;
 }
@@ -10,6 +12,8 @@
 
 .data-section{
     margin-top: 30px;
+    margin-bottom: 50px;
+    margin-right: 50px;
 }
 
 .pie-chart-container {
@@ -19,14 +23,42 @@
 
 .middle-body{
     display: flex;
-    margin-left: 70px;
+    margin-left:100px;
 }
 
 .right-side-msg{
-    display: block;
+    padding-top: 80px;
+    margin-left: 100px;
 }
 
 .right-side-msg img{
     height: 400px;
     width: 400px;
+}
+
+.right-button-text{
+    padding: 10px;
+    width: 200px;
+    background-color: #4b3ca8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.right-button-text a{
+    color: white;
+    text-decoration: none;
+    font-family: "DM Sans";
+    margin-left: 40px;
+}
+
+.text-right-side{
+    font-family: "DM Sans";
+    font-weight: bold;
+    color: rgb(143, 143, 143);
+    font-size: xx-large;
+    align-items: center;
 }

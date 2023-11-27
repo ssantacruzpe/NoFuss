@@ -63,7 +63,10 @@ function InProgressData() {
             <div className="in-progress-section">
                 <div className='left-data-side'>
                     <h2>In Progress</h2>
-                    <p>{totalInProgressTasks} Tasks</p> 
+                    <div className="number-tasks">
+                        <p className="number-data-ip">{totalInProgressTasks}</p> 
+                        <p className="tasks">Tasks</p>
+                    </div>
                 </div>
                 <div>
                     <Pie data={data} />
