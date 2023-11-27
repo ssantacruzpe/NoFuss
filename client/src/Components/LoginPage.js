@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 import "./LoginPage.css"; 
 
 function LoginPage(){
@@ -19,12 +20,13 @@ function LoginPage(){
                 navigate("/welcome");
             }
         } catch (err){
-            alert("Log in failed, check your email or password.");
+            toast.error("Log in failed, check your email or password.");
         }
     }
 
     return(
         <div className="login">
+            <Toaster />
             <div className="left-side-login">
                 <div className="nofuss-title">
                     <h1>NoFuss</h1>

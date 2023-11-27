@@ -58,10 +58,6 @@ form {
 button:hover {
     background-color: #413c69;
   }
-  
-.form-container span{
-  margin: 180px;
-}
 
 .form-signup a {
     color: #4b3ca8;
@@ -85,10 +81,22 @@ a:hover {
     left: 40%;
   }
   
-  .form-singup{
+.form-singup{
     margin: 40px;
   }
   
   .button-text{
     align-items: center;
   }
+
+  .password-input {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    margin: 20px 0;
+}
+
+.eye-icon{
+  padding: 10px;
+}
+
