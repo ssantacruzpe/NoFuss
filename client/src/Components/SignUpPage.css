@@ -81,19 +81,18 @@ a:hover {
     left: 40%;
   }
   
-.form-singup{
+.form-signup{
     margin: 40px;
   }
   
-  .button-text{
-    align-items: center;
+.button-text{
+    margin-left: 180px;
   }
 
-  .password-input {
+.password-input {
     display: flex;
     align-items: center;
     width: 450px;
-    margin: 20px 0;
 }
 
 .eye-icon{

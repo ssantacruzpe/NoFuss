@@ -5,8 +5,9 @@ const jwt = require("jsonwebtoken");
 const register = async(req, res) =>{
     try{
         let {userName, email, password} = req.body;
-        if(!userName || !email || !password){
+        if(!userName, !email, !password){
             return res 
+                .status(402)
                 .send({msg: "All fields are required"});
     }
     let found = await User.findOne({email});
