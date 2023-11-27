@@ -20,7 +20,11 @@
     color: white;
     margin: 10px 0; 
     padding: 10px;
-
+   
+}
+.link-logo{
+    text-decoration: none;
+    color: white;
 }
 
 .navbar ul {
@@ -44,7 +48,16 @@
     margin:20px;
 }
 
+.logout-button{
+    background-color:#6CCAC8; 
+    color:white;
+    font-size: large;
+    border: none;
+    border-radius: 10px;
+}
+
 .navbar .hr {
-    height: 10px;
+    height: 20px;
     margin: 10px;
+    opacity: 1;
 }

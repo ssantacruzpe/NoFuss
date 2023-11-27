@@ -28,13 +28,13 @@ const NavBar = () => {
     return (
         <div className="navbar">
             <div className="logo">
-                <a href = "http://localhost:3001/welcome">
+                <a className="link-logo" href = "http://localhost:3001/welcome">
                     <span className="logo">NoFuss</span>
                 </a>
                 <hr/>
                     <ul className="nav">
                         <li className="nav-item">
-                            <a href="http://localhost:3001/welcome">
+                            <a className="home-text" href="http://localhost:3001/welcome">
                                 Home
                             </a>
                         </li>
@@ -47,7 +47,7 @@ const NavBar = () => {
                     </ul>
                 <hr/>
                     <li className="logout">
-                            <button onClick={handleLogout}>Log Out</button>
+                            <button className="logout-button" onClick={handleLogout}>Log Out</button>
                         </li>
             </div>
         </div>
