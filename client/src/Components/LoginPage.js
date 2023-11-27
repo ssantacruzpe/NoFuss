@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import "./LoginPage.css"; 
 
 function LoginPage(){
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
     async function handleLogin(e){
@@ -37,7 +40,12 @@ function LoginPage(){
                         </div>
                             <form className="form-login" onSubmit={handleLogin} value="LoginForm">
                                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
-                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
+                                <div className="password-input">
+                                    <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                                    <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
+                                        <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
+                                    </span>
+                                </div>
                                 <button type="submit">Log In</button>
                                 <div className="button-text">
                                     <span>Or, <a href="http://localhost:3001/register">Sign Up</a></span>
