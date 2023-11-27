@@ -20,22 +20,24 @@ function SignUpPage(){
     return(
         <div className="sign-up">
             <div className="left-side-sign-up">
-            <div className="nofuss-title">
-                <h1>NoFuss</h1>
+                <div className="nofuss-title">
+                    <h1>NoFuss</h1>
+                </div>
+                    <div className="form-container">
+                        <div className="sign-up-title">
+                            <h2>Sign Up</h2>
+                        </div>
+                            <form className="form-signup" onSubmit={handleRegister} value="SignUpForm">
+				                <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="Name"/>
+                                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
+                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
+                                <button type="submit">Sign In</button>
+                                <div className="button-text">
+                                    <span>Or, <a href="http://localhost:3001/login">Log In</a></span>
+                                </div>
+                            </form>
+                    </div>
             </div>
-        <div className="form-container">
-            <div className="sign-up-title">
-                <h2>Sign Up</h2>
-            </div>
-            <form id="formSignUp" onSubmit={handleRegister} value="SignUpForm">
-                <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="Name"/>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
-                <button type="submit">Sign Up</button>
-                <span>or, <a href="http://localhost:3001/login">Log In</a></span>   
-            </form>
-            </div>
-        </div>
         <div className="image-container">
             <img src="https://cdn-icons-png.flaticon.com/512/4593/4593618.png" alt="landingImage" />
         </div>

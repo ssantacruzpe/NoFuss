@@ -26,21 +26,23 @@ function LoginPage(){
     return(
         <div className="login">
             <div className="left-side-login">
-            <div className="nofuss-title">
-                <h1>NoFuss</h1>
+                <div className="nofuss-title">
+                    <h1>NoFuss</h1>
+                </div>
+                    <div className="form-container">
+                        <div className="login-title">
+                            <h2>Login</h2>
+                        </div>
+                            <form className="form-login" onSubmit={handleLogin} value="LoginForm">
+                                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
+                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
+                                <button type="submit">Log In</button>
+                                <div className="button-text">
+                                    <span>Or, <a href="http://localhost:3001/register">Sign Up</a></span>
+                                </div>
+                            </form>
+                    </div>
             </div>
-        <div className="form-container">
-            <div className="login-title">
-                <h2>Login</h2>
-            </div>
-            <form id="formLogin" onSubmit={handleLogin} value="LoginForm">
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
-                <button type="submit">Log In</button>
-                <span>or, <a href="http://localhost:3001/register">Sign Up</a></span>
-            </form>
-            </div>
-        </div>
         <div className="image-container">
             <img src="https://cdn-icons-png.flaticon.com/512/4593/4593618.png" alt="landingImage" />
         </div>

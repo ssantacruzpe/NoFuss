@@ -61,9 +61,13 @@ function ToDoData() {
     return (
         <div className="to-do-container">
             <div className="to-do-section">
-                <h2>To Do Tasks</h2>
-                <p>{totalToDoTasks}</p> 
-                <Pie data={data} />
+                <div className='left-data-side'>
+                    <h2>To Do</h2>
+                    <p>{totalToDoTasks} Tasks</p> 
+                </div>
+                <div>
+                    <Pie data={data} />
+                </div>
             </div>
         </div>
     );

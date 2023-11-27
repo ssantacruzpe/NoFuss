@@ -1,6 +1,5 @@
 .welcome-body{
-    position: fixed;
-    left: 20%;
+    margin-left: 250px;
 }
 
 .welcome-title{
@@ -10,11 +9,24 @@
 }
 
 .data-section{
-    display: flex;
     margin-top: 30px;
 }
 
 .pie-chart-container {
     height: 100vh; 
     padding-right: 50px; 
+}
+
+.middle-body{
+    display: flex;
+    margin-left: 70px;
+}
+
+.right-side-msg{
+    display: block;
+}
+
+.right-side-msg img{
+    height: 400px;
+    width: 400px;
 }

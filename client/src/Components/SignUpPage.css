@@ -1,24 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans');
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One');
 
-.sign-up {
+
+.sign-up{
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     height: 100vh;
-    background-color: #f0f4f8;
+    background-color: #ffffff;
   }
 
-.nofuss-title {
+.nofuss-title h1{
     color: #7C75D1;
-    font-size: xxx-large;
-    margin: 50px;
+    margin: 30px;
     font-family: Jockey One;
+    font-size: 100px;
   }
   
-.sign-up-title{
+.sign-up-title h2{
     color: #6CCAC8;
+    font-size: 60px;
     font-family: DM Sans;
   }
 
@@ -33,27 +35,35 @@ form {
     flex-direction: column;
   }
   
-input {
-    margin-bottom: 10px;
+.form-signup input {
+    width: 450px;
     padding: 10px;
+    margin: 20px 0;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
+    color: gray;
   }
   
-button {
+.form-signup button {
     padding: 10px;
+    width: 450px;
     background-color: #4b3ca8;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
+    margin-bottom: 20px;
   }
   
 button:hover {
     background-color: #413c69;
   }
   
-  a {
+.form-container span{
+  margin: 180px;
+}
+
+.form-signup a {
     color: #4b3ca8;
     text-decoration: none;
   }
@@ -72,5 +82,13 @@ a:hover {
 .image-container img {
     height: 100vh;
     object-fit: cover;
+    left: 40%;
   }
   
+  .form-singup{
+    margin: 40px;
+  }
+  
+  .button-text{
+    align-items: center;
+  }
