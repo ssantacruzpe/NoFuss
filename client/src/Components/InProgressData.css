@@ -1,6 +1,11 @@
 .in-progress-section{
     display: flex;
+    margin-bottom: 10px;
+    background-color: rgb(239, 239, 239);
+    padding: 10px;
+    border-radius: 10px;
 }
+
 .left-data-side .number-data-ip{
     font-family: "DM Sans";
     font-weight: bolder;

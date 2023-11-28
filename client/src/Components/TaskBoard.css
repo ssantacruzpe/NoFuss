@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One');
 
 .task-board {
     display: flex;
@@ -75,6 +76,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.popup-content-update  h3{
+    color: #6CCAC8; 
+    font-family: "Jockey One";
+    font-size: 50px;
 }
 
 .popup-content-delete {

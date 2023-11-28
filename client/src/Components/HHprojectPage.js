@@ -66,7 +66,7 @@ function HHprojectPage() {
                 <div className="">
                     <div className="useful-buttons">
                         <div className="add-btn">
-                            <div><AddTaskBtn /></div>
+                            <div><AddTaskBtn fetchTasks={fetchTasks}/></div>
                         </div>
                         <div className="search-filter">
                             <div className="search-box"><SearchFilter onSearch={handleSearch} /></div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./AddTaskBtn.css"; 
 import AddTaskForm from "./AddTaskForm";
 
-function AddTaskBtn({}){
+function AddTaskBtn({ fetchTasks }){
   const [showForm, setShowForm] = useState(false);
 
   const openForm = () => setShowForm(true);
@@ -18,7 +18,7 @@ function AddTaskBtn({}){
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeForm}>&times;</span>
-            <AddTaskForm onClose={closeForm} />
+            <AddTaskForm onClose={closeForm} fetchTasks={fetchTasks} />
           </div>
           <div className="modal-overlay" onClick={closeForm}></div>
         </div>

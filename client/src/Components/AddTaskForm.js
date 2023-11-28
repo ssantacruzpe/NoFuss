@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AddTaskForm.css"; 
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
-import { useNavigate } from "react-router-dom";
 
-function AddTaskForm({ onClose }){
+function AddTaskForm({ onClose, fetchTasks }){
     const [taskName, setTaskName] = useState("");
     const [taskPriority, setTaskPriority] = useState("");
     const [taskDeadline, setTaskDeadline] = useState("");
-    const [taskStatus, setTaskStatus] = useState("");
+    const [taskStatus, setTaskStatus] = useState("");   
     const [taskOwner, setTaskOwner] = useState("");
     const [errors, setErrors] = useState({});
-
-    const navigate = useNavigate();
 
     const validateForm = () => {
         let tempErrors = {};
@@ -44,7 +41,7 @@ function AddTaskForm({ onClose }){
             );
             toast.success(res.data.msg);
             onClose();
-            navigate("/hh");
+            await fetchTasks();
         } catch (error) {
             console.error("Error adding task", error);
             toast.error("Error creating a task, check fields");
