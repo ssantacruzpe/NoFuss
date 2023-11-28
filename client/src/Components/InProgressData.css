@@ -1,21 +1,61 @@
-.in-progress-section{
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+.in-progress-container {
     display: flex;
-    margin-bottom: 10px;
-    background-color: rgb(239, 239, 239);
-    padding: 10px;
-    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin: 20px;
+    max-width: 800px; 
 }
 
-.left-data-side .number-data-ip{
-    font-family: "DM Sans";
-    font-weight: bolder;
-    background-color: rgb(243, 196, 27);
-    color: white;
-    width: 100px;
-    height: 100px;
-    margin-top: 20px;
-    padding: 32px;
-    font-size: xx-large;
-    margin-left: 10px;
-    border-radius: 10px;
+.in-progress-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
+
+.left-data-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-data-side h2 {
+    font-family: "DM Sans";
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.number-tasks-ip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3c41b; 
+    border-radius: 50%; 
+    width: 120px; 
+    height: 120px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.number-data-ip {
+    font-family: "DM Sans";
+    font-weight: bold;
+    color: white;
+    font-size: 2em; 
+    margin: 0;
+}
+
+.tasks {
+    font-family: "DM Sans";
+    color: white;
+    margin-top: 5px;
+}
+

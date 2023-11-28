@@ -9,6 +9,7 @@
 .useful-buttons {
     display: flex; 
     justify-content: space-between;
+    align-items: center;
 }
 
 .board-title{
@@ -26,7 +27,9 @@
 .search-filter{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
 .search-box{
     padding-right: 20px;
 }

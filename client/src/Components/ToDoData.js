@@ -63,8 +63,8 @@ function ToDoData() {
             <div className="to-do-section">
                 <div className='left-data-side'>
                     <h2>To Do</h2>
-                    <div className="number-tasks">
-                        <p className="number-data">{totalToDoTasks}</p> 
+                    <div className="number-tasks-todo">
+                        <p className="number-data-todo">{totalToDoTasks}</p> 
                         <p className="tasks">Tasks</p>
                     </div>
                 </div>
@@ -77,3 +77,4 @@ function ToDoData() {
 }
 
 export default ToDoData;
+

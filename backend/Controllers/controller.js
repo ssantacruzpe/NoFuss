@@ -7,7 +7,7 @@ const createTask = async (req, res) => {
             userId: req.user.id 
         };
         let task = await taskEntries.create(newTaskData);
-        res.send({ msg: "New task successfully created", task });
+        res.status(200).send({ msg: "New task successfully created", task });
     } catch (error) {
         console.error('Error in createTask:', error);
         res.status(500).send({ msg: "Internal error, failed to create new task" });

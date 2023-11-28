@@ -1,25 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
-.filter-owner .select {
+.filter-owner {
     display: flex;
     align-items: center;
     padding: 10px;
-    width: calc(100% - 10px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
+    background-color: #f9f9f9; 
     border-radius: 10px;
-    color: gray;
-    font-family: "DM Sans";
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin: 10px 0;
 }
 
 .filter-icon {
+    color: #4a4a4a; 
     margin-right: 10px;
+    font-size: 1.2em; 
 }
 
-.owner-box .select {
-    padding: 20px;
+.owner-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.owner-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc; 
     border-radius: 5px;
-    font-family: "DM Sans";
-    
+    font-family:  "DM Sans";
+    font-size: 1em;
+    color: #333; 
+    width: 100%; 
+    background-color: white; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    cursor: pointer; 
+}
+
+.owner-select::-ms-expand {
+    display: none; 
 }

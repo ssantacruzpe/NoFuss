@@ -39,7 +39,7 @@ function AddTaskForm({ onClose, fetchTasks }){
                 { taskName, taskPriority, taskDeadline, taskStatus, taskOwner },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
-            toast.success(res.data.msg);
+            toast.success("Task successfully created");
             onClose();
             await fetchTasks();
         } catch (error) {

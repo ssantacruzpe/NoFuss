@@ -63,7 +63,7 @@ function InProgressData() {
             <div className="in-progress-section">
                 <div className='left-data-side'>
                     <h2>In Progress</h2>
-                    <div className="number-tasks">
+                    <div className="number-tasks-ip">
                         <p className="number-data-ip">{totalInProgressTasks}</p> 
                         <p className="tasks">Tasks</p>
                     </div>

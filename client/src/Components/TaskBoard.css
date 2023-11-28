@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One');
 
 .task-board {
@@ -24,7 +24,7 @@
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     cursor: grab;
-    font-family: DM Sans;
+    font-family: "DM Sans";
 }
 
 .task-square:active {

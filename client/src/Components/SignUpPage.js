@@ -48,7 +48,7 @@ function SignUpPage() {
                                 <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
                             </span>
                         </div>
-                        <button type="submit">Sign In</button>
+                        <button type="submit">Sign Up</button>
                         <div className="button-text">
                             <span>Or, <a href="http://localhost:3001/login">Log In</a></span>
                         </div>
